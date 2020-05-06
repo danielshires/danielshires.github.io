@@ -1,0 +1,310 @@
+/* Global Selectors */
+
+$text-white: #EEEEEE;
+$bg-homepage:#EEEEEE;
+$digital-navy:#1D252D;
+$muted-grey: #858D94;
+
+
+/* Mixins */
+
+
+@mixin font-weight-regular {
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', Helvetica, sans-serif;
+  text-align: left;
+}
+
+@mixin border($width: 1px, $color: $bg-homepage) {
+  outline: $width solid $color;
+}
+
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+}
+
+/* Link Hover */
+
+@mixin text-hover ($underline){
+  &:hover {
+    text-decoration: $underline;
+  }
+}
+
+/* Breakpoints */
+$breakpoint-desktop-hd: 1440px;
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 460px;
+
+/* Global Styles */
+
+html {
+  font-size: 16px;
+  overflow-y: scroll;
+}
+
+/* border box on child elements
+
+body>* {
+    border-radius: 1px;
+  box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.05);
+}
+*/
+
+body {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: auto;
+  background-color: $bg-homepage;
+  font-family: 'IBM Plex Sans', Helvetica, sans-serif;
+}
+
+#page {
+  @include flex-wrap;
+  padding: 1em;
+}
+
+header {
+  color: $digital-navy;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  flex-basis: 20%;
+
+  padding : {
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+  }
+
+  h1 {
+    @include font-weight-regular;
+    font-size: 1em;
+    line-height: 1.2em;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  h2 {
+    color: $muted-grey;
+  }
+
+  a {
+    text-decoration: none;
+    @include text-hover(underline)
+  }
+}
+
+nav {
+  margin-top: 2em;
+
+  span {
+    @include font-weight-regular
+  }
+
+  .link {
+    color: $muted-grey;
+  }
+
+  .title {
+    color: $digital-navy;
+    font-weight: 300;
+}
+}
+
+/*Section*/
+
+section {
+  flex-basis: 80%;
+  height: auto;
+  padding : {
+    top: 2em;
+  }
+
+  .intro {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    color: $muted-grey;
+
+    padding : {
+      top: 0rem;
+      left: 0rem;
+    }
+  }
+
+  span {
+    color: $digital-navy;
+  }
+}
+
+/* -- Grid -- */
+
+.grid {
+  margin : {
+    top: 6rem;
+  }
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer,
+.grid li {
+  width: 33%;
+  float: left;
+  padding: 0.5rem 0.5em 0.5rem 0.5rem;
+  opacity: 0;
+  display: block;
+}
+
+.grid li.large {
+  width: 66%;
+}
+
+.grid li a,
+.grid li img {
+  outline: none;
+  border: none;
+  display: block;
+  max-width: 100%;
+}
+
+.grid li.shown,
+.no-js .grid li,
+.no-cssanimations .grid li {
+  opacity: 1;
+}
+
+@media only screen and (max-width: $breakpoint-desktop-hd) {
+
+  .grid-sizer,
+  .grid li {
+    width: 33%;
+    float: left;
+    padding: 0rem 1em 1rem 0rem;
+    opacity: 0;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-desktop) {
+
+  .grid-sizer,
+  .grid li {
+    width: 50%;
+    float: left;
+    padding: 0 1rem 1rem 0;
+    opacity: 0;
+    display: block;
+  }
+
+  .grid li.large {
+    width: 50%;
+    clear: both;
+  }
+
+  .grid li.medium {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+
+  /*Section*/
+
+  header {
+    display: none;
+  }
+
+  section {
+    flex-basis: 100%;
+    height: auto;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 4rem;
+
+      padding : {
+        top: 0rem;
+        left: 0rem;
+      }
+    }
+  }
+
+  .grid-sizer,
+  .grid li {
+    width: 100%;
+    float: left;
+    padding: 0.5rem 0 0.5rem 0;
+    opacity: 0;
+    display: block;
+  }
+
+  .grid li.large {
+    width: 100%;
+    clear: both;
+  }
+
+  .grid li.medium {
+    width: 100%;
+  }
+
+}
+
+/* Effect 4: fall perspective
+
+  .grid.effect-1 li.animate {
+	-webkit-animation: fadeIn 0.65s ease forwards;
+	animation: fadeIn 0.65s ease forwards;
+}
+
+@-webkit-keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
+
+*/
+
+.grid.effect-1 li.animate {
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+  -webkit-animation: moveUp 1s ease forwards;
+  animation: moveUp 1s ease forwards;
+}
+
+@-webkit-keyframes moveUp {
+  0% {}
+
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveUp {
+  0% {}
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
