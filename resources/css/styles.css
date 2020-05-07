@@ -126,7 +126,7 @@ section {
 
 section .intro {
   width: 95%;
-  height: 10em;
+  height: auto;
 }
 
 section h1 {
@@ -136,6 +136,12 @@ section h1 {
   color: #858D94;
   padding-top: 0rem;
   padding-left: 0rem;
+}
+
+/* -- Article -- */
+article .grid {
+  height: auto;
+  margin-top: 2em;
 }
 
 h1 span {
@@ -163,10 +169,6 @@ h1 a:hover:after {
 }
 
 /* -- Grid -- */
-.grid {
-  margin-top: 6rem;
-}
-
 .grid:after {
   content: '';
   display: block;
@@ -230,7 +232,7 @@ h1 a:hover:after {
 }
 
 @media only screen and (max-width: 768px) {
-  /*Section*/
+  /* -- Section -- */
   header {
     display: none;
   }
