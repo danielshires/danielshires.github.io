@@ -1,4 +1,4 @@
-/* Global Selectors */
+/* -- Global Selectors -- */
 
 $text-white: #EEEEEE;
 $bg-homepage:#EEEEEE;
@@ -6,7 +6,7 @@ $digital-navy:#1D252D;
 $muted-grey: #858D94;
 
 
-/* Mixins */
+/* -- Mixins -- */
 
 
 @mixin font-weight-regular {
@@ -27,9 +27,10 @@ $muted-grey: #858D94;
 
 /* Link Hover */
 
-@mixin text-hover ($underline){
+@mixin text-hover () {
   &:hover {
-    text-decoration: $underline;
+    text-decoration: none;
+    color: $digital-navy;
   }
 }
 
@@ -39,7 +40,7 @@ $breakpoint-desktop: 1024px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 460px;
 
-/* Global Styles */
+/* -- Global Styles -- */
 
 html {
   font-size: 16px;
@@ -68,6 +69,8 @@ body {
   padding: 1em;
 }
 
+/* -- Header -- */
+
 header {
   color: $digital-navy;
   font-weight: 300;
@@ -95,9 +98,32 @@ header {
 
   a {
     text-decoration: none;
-    @include text-hover(underline)
+    @include text-hover;
+    width: 100%;
   }
 }
+
+button {
+  font-size: 0.8em;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  background-color: inherit;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  &focus {
+    outline: 0;
+  }
+
+  &active {
+    outline: 0;
+    border: 0;
+  }
+}
+
+/* -- Navigation -- */
 
 nav {
   margin-top: 2em;
@@ -111,22 +137,30 @@ nav {
   }
 
   .title {
-    color: $digital-navy;
     font-weight: 300;
-}
+  }
+
+  li {
+    width: 100%;
+  }
+
 }
 
-/*Section*/
+
+
+/* -- Section -- */
 
 section {
   flex-basis: 80%;
   height: auto;
+
   padding : {
     top: 2em;
   }
 
   .intro {
     width: 95%;
+    height: 10em;
   }
 
   h1 {
@@ -139,11 +173,38 @@ section {
       top: 0rem;
       left: 0rem;
     }
+
   }
+}
+
+h1 {
 
   span {
     color: $digital-navy;
+
   }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    position: relative;
+  }
+
+  a:hover:after {
+    content: url(https://media.giphy.com/media/xT8qBhUUelhfFfl7Py/giphy.gif);
+    /* no need for qoutes */
+    display: block;
+    position: absolute;
+    left: 0px;
+    /* change this value to one that suits you */
+    top: -50px;
+    /* change this value to one that suits you */
+    right: 20px;
+  }
+
+
 }
 
 /* -- Grid -- */

@@ -1,8 +1,8 @@
-/* Global Selectors */
-/* Mixins */
+/* -- Global Selectors -- */
+/* -- Mixins -- */
 /* Link Hover */
 /* Breakpoints */
-/* Global Styles */
+/* -- Global Styles -- */
 html {
   font-size: 16px;
   overflow-y: scroll;
@@ -36,6 +36,7 @@ body {
   padding: 1em;
 }
 
+/* -- Header -- */
 header {
   color: #1D252D;
   font-weight: 300;
@@ -64,12 +65,35 @@ header h2 {
 
 header a {
   text-decoration: none;
+  width: 100%;
 }
 
 header a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #1D252D;
 }
 
+button {
+  font-size: 0.8em;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  background-color: inherit;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+buttonfocus {
+  outline: 0;
+}
+
+buttonactive {
+  outline: 0;
+  border: 0;
+}
+
+/* -- Navigation -- */
 nav {
   margin-top: 2em;
 }
@@ -85,11 +109,14 @@ nav .link {
 }
 
 nav .title {
-  color: #1D252D;
   font-weight: 300;
 }
 
-/*Section*/
+nav li {
+  width: 100%;
+}
+
+/* -- Section -- */
 section {
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
@@ -99,6 +126,7 @@ section {
 
 section .intro {
   width: 95%;
+  height: 10em;
 }
 
 section h1 {
@@ -110,8 +138,28 @@ section h1 {
   padding-left: 0rem;
 }
 
-section span {
+h1 span {
   color: #1D252D;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+h1 a:hover {
+  position: relative;
+}
+
+h1 a:hover:after {
+  content: url(https://media.giphy.com/media/xT8qBhUUelhfFfl7Py/giphy.gif);
+  /* no need for qoutes */
+  display: block;
+  position: absolute;
+  left: 0px;
+  /* change this value to one that suits you */
+  top: -50px;
+  /* change this value to one that suits you */
+  right: 20px;
 }
 
 /* -- Grid -- */
