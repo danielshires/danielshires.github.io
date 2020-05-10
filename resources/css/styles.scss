@@ -177,13 +177,23 @@ section {
   }
 }
 
+.wip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.welcome-img {align-items: center;}
+
 /* -- Article -- */
 
 article {
 
   .grid {
     height: auto;
-    margin-top: 2em;
+    margin-top: 6em;
   }
 }
 
