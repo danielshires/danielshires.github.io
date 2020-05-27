@@ -1,13 +1,26 @@
-/* -- Global Selectors -- */
+// Brand Colours ------------------------------
 
-$text-white: #EEEEEE;
-$bg-homepage:#EEEEEE;
+$text-white: #eee;
+$bg-homepage:#eee;
 $digital-navy:#1D252D;
 $muted-grey: #858D94;
 
+// Project Colours ------------------------------
 
-/* -- Mixins -- */
+$maso: #f40082;
+$maso-light: #ff93cf;
+$ajg:#74adde;
+$ajg-light:#c1dff3;
+$made: #223850;
+$made-light: #a4afba;
+$scenic: #c6a367;
+$scenic-light: #ebdabf;
+$wallace: #322a1d;
+$wallace-light: #ADA9A4;
+$wimbledon: #166938;
+$wimbledon-light: #98c4ae;
 
+// Mixins ------------------------------
 
 @mixin font-weight-regular {
   font-weight: 400;
@@ -25,26 +38,118 @@ $muted-grey: #858D94;
   justify-content: stretch;
 }
 
-/* Link Hover */
+@mixin flex-space {
+  display: flex;
+  justify-content: space-between;
+}
 
-@mixin text-hover () {
+@mixin site-padding {
+  padding: 2.5rem;
+}
+
+@mixin site-padding-mobile {
+  padding: 1rem;
+}
+
+// Link Hover ------------------------------
+
+@mixin link-hover-transition {
+  transition: 200ms ease-out;
+}
+
+@mixin link-hover () {
   &:hover {
-    text-decoration: none;
-    color: $digital-navy;
+    @include link-hover-transition()
+  }
+  &:focus {
+    @include link-hover-transition()
   }
 }
 
-/* Breakpoints */
+// Text ------------------------------
+
+@mixin text-styles {
+  font-size: 2.75rem;
+  line-height: 3.25rem;
+  font-weight: 300;
+  @include link-hover-transition()
+}
+
+@mixin text-styles-tablet {
+  font-size: 2em;
+  line-height: 2.5rem;
+  font-weight: 300;
+  @include link-hover-transition()
+}
+
+@mixin text-styles-mobile {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 300;
+  @include link-hover-transition()
+}
+
+@mixin header-text {
+  @include text-styles;
+  color: $digital-navy;
+}
+
+@mixin menu-text {
+  color: $text-white;
+  @include text-styles;
+}
+
+@mixin cover-text {
+  @include text-styles;
+}
+
+// Text Tablet ------------------------------
+
+@mixin header-text-mobile {
+  color: $digital-navy;
+  @include text-styles-mobile();
+  @include link-hover-transition();
+}
+
+@mixin cover-text-mobile {
+  @include text-styles-mobile;
+}
+
+@mixin menu-text-mobile {
+  @include text-styles-mobile();
+}
+
+
+// Text Mobile ------------------------------
+
+@mixin header-text-tablet {
+  color: $digital-navy;
+  @include text-styles-tablet();
+  @include link-hover-transition();
+}
+
+@mixin cover-text-tablet {
+  @include text-styles-tablet;
+}
+
+@mixin menu-text-tablet {
+  @include text-styles-tablet();
+}
+
+
+// Breakpoints ------------------------------
+
 $breakpoint-desktop-hd: 1440px;
 $breakpoint-desktop: 1024px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 460px;
 
-/* -- Global Styles -- */
+// Global Styles ------------------------------
 
 html {
   font-size: 16px;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /* border box on child elements
@@ -64,170 +169,620 @@ body {
   font-family: 'IBM Plex Sans', Helvetica, sans-serif;
 }
 
-#page {
-  @include flex-wrap;
-  padding: 1em;
+
+.fourzerofour {
+    background: linear-gradient(215deg, #a6c7eb, #f4a7d0);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 42s ease infinite;
+    -moz-animation: AnimationName 42s ease infinite;
+    animation: AnimationName 42s ease infinite;
 }
 
-/* -- Header -- */
+@-webkit-keyframes AnimationName {
+    0%{background-position:83% 0%}
+    50%{background-position:18% 100%}
+    100%{background-position:83% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:83% 0%}
+    50%{background-position:18% 100%}
+    100%{background-position:83% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:83% 0%}
+    50%{background-position:18% 100%}
+    100%{background-position:83% 0%}
+}
+
+#page {
+  width: 100%;
+  margin: auto;
+}
+
+// Header ------------------------------
 
 header {
-  color: $digital-navy;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  flex-basis: 20%;
+  position: fixed;
+  margin: auto;
+  @include site-padding;
+  width: 100%;
+  z-index: 2;
+}
 
-  padding : {
-    top: 2rem;
-    left: 2rem;
-    right: 2rem;
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  .top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
+
+  .bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+}
+
+// Navigation ------------------------------
+
+.header-text {
 
   h1 {
-    @include font-weight-regular;
-    font-size: 1em;
-    line-height: 1.2em;
-    margin: 0;
-    font-weight: 400;
+    @include header-text();
   }
 
-  h2 {
+  span {
+    font-weight: 300;
     color: $muted-grey;
   }
 
   a {
-    text-decoration: none;
-    @include text-hover;
-    width: 100%;
+    @include link-hover-transition()
+  }
+
+  a:hover,
+  a:focus {
+    color: $muted-grey;
+    @include link-hover-transition();
   }
 }
 
-button {
-  font-size: 0.8em;
-  font-family: inherit;
-  border: 0;
-  padding: 0;
-  background-color: inherit;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-
-  &focus {
-    outline: 0;
-  }
-
-  &active {
-    outline: 0;
-    border: 0;
-  }
-}
-
-/* -- Navigation -- */
-
-nav {
-  margin-top: 2em;
+.right {
 
   span {
-    @include font-weight-regular
-  }
-
-  .link {
-    color: $muted-grey;
-  }
-
-  .title {
+    @include header-text();
     font-weight: 300;
   }
 
-  li {
-    width: 100%;
+  span:hover {
+    color: $muted-grey;
+    @include link-hover-transition();
   }
 
 }
 
+// Menu Navigation ------------------------------
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: $digital-navy;
+  a {
+    color: $text-white;
+    @include link-hover-transition()
+  }
+
+  a:hover,
+  a:focus {
+    color: $muted-grey;
+    @include link-hover-transition();
+  }
+}
+
+.overlay-content {
+  text-align: left;
+  @include site-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 100%;
+  @include menu-text();
+
+  a {
+    color: $text-white;
+    @include link-hover-transition()
+  }
+
+  a:hover,
+  a:focus {
+    color: $muted-grey;
+    @include link-hover-transition();
+  }
+}
+
+.overlay .closebtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  @include site-padding;
+  @include menu-text();
+}
+
+.menu-list-other {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  @include menu-text();
+  color: $text-white;
+}
 
 
-/* -- Section -- */
+// Section ------------------------------
 
 section {
-  flex-basis: 80%;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+// Cover Section ------------------------------
+
+.cover {
+  height: 100vh;
+  width: 100%;
+  @include site-padding;
+}
+
+.cover-text {
+  width: 50%;
   height: auto;
 
-  padding : {
-    top: 2em;
-  }
-
-  .intro {
-    width: 95%;
-    height: auto;
-  }
 
   h1 {
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 2.5rem;
+    @include cover-text();
+  }
+
+  p {
+    @include cover-text();
+  }
+}
+
+.cover-roles {
+  display: inline-flex;
+  margin-top: 1rem;
+
+  h5 {
+    padding-right: 2rem;
     color: $muted-grey;
-
-    padding : {
-      top: 0rem;
-      left: 0rem;
-    }
-
+    font-weight: 300;
   }
-}
-
-.wip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
-
-.welcome-img {align-items: center;}
-
-/* -- Article -- */
-
-article {
-
-  .grid {
-    height: auto;
-    margin-top: 6em;
-  }
-}
-
-h1 {
 
   span {
+    font-size: 1rem;
     color: $digital-navy;
-
+    padding-left: 0.25rem;
   }
+}
+
+// Project Navigation ------------------------------
+
+.navigation-arrow {
+  @include text-styles();
+  font-weight: 300;
+  text-align: right;
+  margin-right: 0.5rem;
 
   a {
-    text-decoration: none;
+    @include link-hover-transition();
   }
 
+  a:hover,
+  a:focus {
+    @include link-hover-transition();
+  }
+}
+
+.navigation-arrow.down {
+
+  a {
+    @include link-hover-transition();
+  }
+
+  a:hover,
+  a:focus {
+    @include link-hover-transition();
+  }
+}
+
+.navigation-arrow.up {
+  color: $digital-navy;
+  margin-bottom: -0.5rem;
+
+  a {
+    @include link-hover-transition();
+  }
   a:hover {
-    position: relative;
+    @include link-hover-transition();
+  }
+}
+
+// Brand Text ------------------------------
+
+.brand-text {
+
+  h1 {
+    color: $digital-navy;
+
+    a {
+      color: $digital-navy;
+      @include link-hover-transition()
+    }
+
+    a:hover, a:focus {
+      color: $muted-grey;
+      @include link-hover-transition()
+    }
   }
 
-  a:hover:after {
-    content: url(https://media.giphy.com/media/xT8qBhUUelhfFfl7Py/giphy.gif);
-    /* no need for qoutes */
-    display: block;
-    position: absolute;
-    left: 0px;
-    /* change this value to one that suits you */
-    top: -50px;
-    /* change this value to one that suits you */
-    right: 20px;
+  p {
+    color: $muted-grey;
+  }
+}
+
+// Maso Section ------------------------------
+
+.maso {
+  background-color: $maso;
+}
+
+.maso-text {
+
+  h1 {
+    color: $text-white;
   }
 
+  p {
+    color: $maso-light;
+  }
+}
+
+.maso-roles {
+
+  h5 {
+    color:$text-white;
+  }
+
+  span {
+    color: $maso-light;
+  }
+}
+
+.navigation-arrow.navigation-maso.down {
+  color: #ff93cf;
+  a:hover,
+  a:focus {
+    color: white;
+  }
+}
+
+.navigation-arrow.navigation-maso.up {
+  a:hover,
+  a:focus {
+    color: $maso;
+  }
+}
+
+// Gallagher ------------------------------
+
+.ajg {
+  background-color: $ajg;
+}
+
+.ajg-text {
+
+  h1 {
+    color: $text-white;
+  }
+
+  p {
+    color: $ajg-light;
+  }
+}
+
+.ajg-roles {
+
+  h5 {
+    color:$text-white;
+  }
+
+  span {
+    color: $ajg-light;
+  }
+}
+
+.navigation-arrow.navigation-ajg.down {
+  color: $ajg-light;
+  a:hover,
+  a:focus {
+    color: white;
+  }
+}
+
+.navigation-arrow.navigation-ajg.up {
+  a:hover,
+  a:focus {
+    color: $ajg;
+  }
+}
+
+// Made Section ------------------------------
+
+.made {
+  background-color: $made;
+}
+
+.made-text {
+
+  h1 {
+    color: $text-white;
+  }
+
+  p {
+    color: $made-light;
+  }
+}
+
+.made-roles {
+
+  h5 {
+    color: $text-white;
+  }
+
+  span {
+    color: $made-light;
+  }
+}
+
+.navigation-arrow.navigation-made.down {
+  color: $made-light;
+  a:hover,
+  a:focus {
+    color: white;
+  }
+}
+
+.navigation-arrow.navigation-made.up {
+  a:hover,
+  a:focus {
+    color: $made;
+  }
+}
+
+// Scenic Section ------------------------------
+
+.scenic {
+  background-color: $scenic;
+}
+
+.scenic-text {
+
+  h1 {
+    color: $text-white;
+  }
+
+  p {
+    color: $scenic-light;
+  }
+}
+
+.scenic-roles {
+
+  h5 {
+    color: $text-white;
+  }
+
+  span {
+    color: $scenic-light;
+  }
+}
+
+.navigation-arrow.navigation-scenic.down {
+  color: $scenic-light;
+  a:hover,
+  a:focus {
+    color: white;
+  }
+}
+
+.navigation-arrow.navigation-scenic.up {
+  a:hover,
+  a:focus {
+    color: $scenic;
+  }
+}
+
+// Wallace Section ------------------------------
+
+.wallace {
+  background-color: $wallace;
+}
+
+.wallace-text {
+
+  h1 {
+    color: $text-white;
+  }
+
+  p {
+    color: $wallace-light;
+  }
+}
+
+.wallace-roles {
+
+  h5 {
+    color: $text-white;
+  }
+
+  span {
+    color: $wallace-light;
+  }
+}
+
+.navigation-arrow.navigation-wallace.down {
+  color: $wallace-light;
+  a:hover,
+  a:focus {
+    color: white;
+  }
+}
+
+.navigation-arrow.navigation-wallace.up {
+  a:hover,
+  a:focus {
+    color: $wallace;
+  }
+}
+
+// Wimbledon Section ------------------------------
+
+.wimbledon {
+  background-color: $wimbledon;
+}
+
+.wimbledon-text {
+
+  h1 {
+    color: $text-white;
+  }
+
+  p {
+    color: $wimbledon-light;
+  }
+}
+
+.wimbledon-roles {
+
+  h5 {
+    color: $text-white;
+  }
+
+  span {
+    color: $wimbledon-light;
+  }
+}
+
+.navigation-arrow.navigation-wimbledon.down {
+  color: $wimbledon-light;
+  a:hover,
+  a:focus {
+    color: white;
+  }
+}
+
+.navigation-arrow.navigation-wimbledon.up {
+  a:hover,
+  a:focus {
+    color: $wimbledon;
+  }
+}
+
+// Project Cover Colours ------------------------------
+
+.brand {
+  background-color: $text-white;
+}
+
+.ajg {
+  background-color: $ajg;
+}
+
+.made {
+  background-color: $made;
+}
+
+.scenic {
+  background-color: $scenic;
+}
+
+.wallace {
+  background-color: $wallace;
+}
+
+.wimbledon {
+  background-color: $wimbledon;
+}
+
+// Footer ------------------------------
+
+.footer-text {
+  width: 50%;
+  height: auto;
+
+  h1 {
+    @include cover-text();
+    color: $digital-navy;
+
+    a {
+      @include link-hover-transition();
+    }
+
+    a:hover,
+    a:focus {
+      color: $muted-grey;
+      @include link-hover-transition();
+    }
+  }
+
+  p {
+    @include cover-text();
+    color: $maso-light;
+  }
 
 }
 
-/* -- Grid -- */
+// Homepage Grid ------------------------------
+
+.main-container {
+  margin-top: 0rem;
+  z-index: 1;
+  padding: 1rem;
+  min-height: 100vh;
+}
 
 .grid:after {
   content: '';
@@ -237,15 +792,20 @@ h1 {
 
 .grid-sizer,
 .grid li {
-  width: 33%;
+  width: 25%;
   float: left;
-  padding: 0.5rem 0.5em 0.5rem 0.5rem;
+  padding: 1rem 1rem 1rem 1rem;
   opacity: 0;
   display: block;
+  margin: auto;
 }
 
 .grid li.large {
-  width: 66%;
+  width: 100%;
+}
+
+.grid li.medium {
+  width: 50%;
 }
 
 .grid li a,
@@ -266,11 +826,20 @@ h1 {
 
   .grid-sizer,
   .grid li {
-    width: 33%;
+    width: 33.333%;
     float: left;
-    padding: 0rem 1em 1rem 0rem;
+    padding: 1rem 1rem 1rem 1rem;
     opacity: 0;
     display: block;
+  }
+
+  .grid li.large {
+    width: 100%;
+    clear: both;
+  }
+
+  .grid li.medium {
+    width: 50%;
   }
 }
 
@@ -280,13 +849,13 @@ h1 {
   .grid li {
     width: 50%;
     float: left;
-    padding: 0 1rem 1rem 0;
+    padding: 1rem 1rem 1rem 1rem;
     opacity: 0;
     display: block;
   }
 
   .grid li.large {
-    width: 50%;
+    width: 100%;
     clear: both;
   }
 
@@ -297,33 +866,182 @@ h1 {
 
 @media only screen and (max-width: $breakpoint-tablet) {
 
-  /* -- Section -- */
+// Header ------------------------------
 
-  header {
-    display: none;
+header {
+  @include site-padding-tablet;
+}
+
+.header-text {
+
+  h1 {
+    @include header-text-tablet();
+  }
+}
+
+.right {
+
+  span {
+    @include header-text-tablet();
+  }
+}
+
+// Menu Navigation ------------------------------
+
+.overlay-content {
+  @include site-padding-tablet;
+  @include menu-text-tablet();
+}
+
+.overlay .closebtn {
+  @include site-padding-tablet;
+  @include menu-text-tablet();
+}
+
+.menu-list-other {
+  @include menu-text-tablet();
+}
+
+
+// Cover Section ------------------------------
+
+.cover {
+  width: 85%;
+  @include site-padding-tablet;
+}
+
+.cover-text {
+  width: 100%;
+  height: auto;
+
+  h1 {
+    @include cover-text-tablet();
   }
 
-  section {
-    flex-basis: 100%;
-    height: auto;
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 300;
-      line-height: 4rem;
-
-      padding : {
-        top: 0rem;
-        left: 0rem;
-      }
-    }
+  p {
+    @include cover-text-tablet();
   }
+}
+
+.cover-roles {
+  display: inline-flex;
+  margin-top: 1rem;
+
+  h5 {
+    padding-right: 1.5rem;
+  }
+
+  span {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+}
+
+// Project Navigation ------------------------------
+
+.navigation-arrow {
+  @include text-styles-mobile();
+  text-align: right;
+  margin-right: 0.1rem;
+}
+
+.navigation-arrow.up {
+  margin-bottom: -0.25rem;
+}
+
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+
+// Header ------------------------------
+
+header {
+  @include site-padding-mobile;
+}
+
+.header-text {
+
+  h1 {
+    @include header-text-mobile();
+  }
+}
+
+.right {
+
+  span {
+    @include header-text-mobile();
+  }
+}
+
+// Menu Navigation ------------------------------
+
+.overlay-content {
+  @include site-padding-mobile;
+  @include menu-text-mobile();
+}
+
+.overlay .closebtn {
+  @include site-padding-mobile;
+  @include menu-text-mobile();
+}
+
+.menu-list-other {
+  @include menu-text-mobile();
+}
+
+
+// Cover Section ------------------------------
+
+.cover {
+  @include site-padding-mobile;
+}
+
+.cover-text {
+  width: 100%;
+  height: auto;
+
+  h1 {
+    @include cover-text-mobile();
+  }
+
+  p {
+    @include cover-text-mobile();
+  }
+}
+
+.cover-roles {
+  display: inline-flex;
+  margin-top: 0.75rem;
+
+  h5 {
+    padding-right: 1rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+    padding-left: 0.25rem;
+  }
+}
+
+// Project Navigation ------------------------------
+
+.navigation-arrow {
+  @include text-styles-mobile();
+  text-align: right;
+  margin-right: 0.1rem;
+}
+
+.navigation-arrow.up {
+  margin-bottom: -0.25rem;
+}
+
+// Grid ------------------------------
 
   .grid-sizer,
   .grid li {
     width: 100%;
     float: left;
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     opacity: 0;
     display: block;
   }
@@ -339,24 +1057,7 @@ h1 {
 
 }
 
-/* Effect 4: fall perspective
-
-  .grid.effect-1 li.animate {
-	-webkit-animation: fadeIn 0.65s ease forwards;
-	animation: fadeIn 0.65s ease forwards;
-}
-
-@-webkit-keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
-}
-
-@keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
-}
-
-*/
+// Masonry Grid Animation ------------------------------
 
 .grid.effect-1 li.animate {
   -webkit-transform: translateY(50px);

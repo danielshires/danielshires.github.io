@@ -1,61 +1,111 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167762517-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167762517-1');
+</script>
+<!-- Title -->
   <meta charset="utf-8">
-  <title>Page Not Found</title>
+  <title>Daniel Shires – Digital Graphic Designer</title>
+  <!-- Meta -->
+  <meta name="description" content="Daniel Shires – Digital Graphic Designer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.danielshires.com">
+  <meta property="og:title" content="Daniel Shires – Digital Graphic Designer">
+  <meta property="og:description" content="Portfolio of Dabiel Shires, Sydney-based Digital Graphic Designer.">
+  <meta property="og:image" content="/resources/favicon/open-graph.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="628">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@danielshires">
+  <meta name="twitter:title" content="Daniel Shires – Digital Graphic Designer">
+  <meta name="twitter:description" content="Portfolio of Dabiel Shires, Sydney-based Digital Graphic Designer.">
+  <meta name="twitter:image" content="/assets/favicon/open-graph.jpg">
+  <meta name="twitter:creator" content="@rdbok">
+  <!-- Links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./resources/favicon/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./resources/favicon/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="./resources/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
+  <link rel="stylesheet" type="text/scss" href="./resources/css/styles.scss">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/5169a90acf.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+  </script>
 
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
-
-    body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
-    }
-
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
-    }
-
-    p {
-      margin: 0 auto;
-      width: 280px;
-    }
-
-    @media only screen and (max-width: 280px) {
-
-      body,
-      p {
-        width: 95%;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
-
-    }
-  </style>
 </head>
 
-<body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+<body id="body" class="fourzerofour">
+
+  <!-- Page -->
+  <div id="page" class="page">
+
+    <!-- Header -->
+    <header id="header">
+      <nav id="nav" class="header header-text">
+        <div class="top">
+          <div class="left">
+            <a href="./index.html">
+              <h1>Daniel Shires
+            </a><span>Digital & Print Design</span></h1>
+          </div>
+          <div class="right">
+            <span style="cursor: pointer;" onclick="openNav()">
+              Menu
+            </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Menu -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="cursor:pointer">Close</a>
+      <div class="overlay-content">
+        <div class="menu-list">
+          <div class="menu-item maso-fitness-link"><a href="./work/design/maso-fitness.html">Maso Fitness</a></div>
+          <div class="menu-item scenic-link"><a href="./work/design/scenic.html">Scenic</a></div>
+          <div class="menu-item gallgher-link"><a href="./work/design/gallagher.html">Gallagher</a></div>
+          <div class="menu-item made-link"><a href="./work/design/made.html">Made</a></div>
+        </div>
+        <div class="menu-list-other">
+          <div class="menu-item about-link"><a href="./about.html">About</a></div>
+          <div class="menu-item contact-link"><a href="./contact.html">Contact</a></div>
+        </div>
+      </div>
+      </div>
+
+<body class="404">
+  <section id="cover-section" class="cover 404 flex-center">
+    <div class="cover-text brand-text">
+        <h1><a href="./index.html">Sorry this page doesn't exist ¯\_(ツ)_/¯</a></h1>
+        <div class="cover-roles">
+            <h5><a href="https://www.instagram.com/danielshires/" target="_blank" rel="noopener noreferrer">Instagram</a></h5>
+            <h5><a href="https://www.linkedin.com/in/shiresdaniel/" target="_blank" rel="noopener noreferrer"></a>Linkedin</h5>
+        </div>
+    </div>
+
+          <!-- Menu -->
+          <script>
+            function openNav() {
+              document.getElementById("myNav").style.display = "block";
+            }
+
+            function closeNav() {
+              document.getElementById("myNav").style.display = "none";
+            }
+          </script>
 </body>
 
 </html>

@@ -2,6 +2,19 @@
 <html class="no-js" lang="">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167762517-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-167762517-1');
+  </script>
+  <!-- Title -->
   <meta charset="utf-8">
   <title>Daniel Shires – Digital Graphic Designer</title>
   <!-- Meta -->
@@ -21,33 +34,199 @@
   <meta name="twitter:image" content="/assets/favicon/open-graph.jpg">
   <meta name="twitter:creator" content="@rdbok">
   <!-- Links -->
-  <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./resources/favicon/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./resources/favicon/favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="resources/css/styles.css">
-  <link rel="stylesheet" type="text/scss" href="resources/css/styles.scss">
+  <link rel="stylesheet" type="text/css" href="./resources/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./resources/css/styles.css">
+  <link rel="stylesheet" type="text/scss" href="./resources/css/styles.scss">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/5169a90acf.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
   </script>
-  <script>
-    $(function () {
-      $("#header").load("header.html");
-      $("#footer").load("footer.html");
-    });
-  </script>
+
 </head>
 
-<body id="" class="body">
-    <div class="wip">
-      <h1 style="margin-bottom: 0.5em; font-weight: bold;">Site in progess</h1>
-      <h2 style="margin-bottom: 2em;">Visit my <a href="https://www.linkedin.com/in/shiresdaniel/">LinkedIn</a> page for more information, or email me at <a href="mailto:hello@danielshires.com">hello@danielshires.com</a>.</h2>
-      <img class="welcome-img" src="https://media0.giphy.com/media/kudIERso2pFiE/giphy.gif?cid=ecf05e4702aa27b959d2234be91f18575608456bb865d19f&rid=giphy.gif">
+<body id="body" class="body">
+
+  <!-- Page -->
+  <div id="page" class="page">
+
+    <!-- Header -->
+    <header id="header">
+      <nav id="nav" class="header header-text">
+        <div class="top">
+          <div class="left">
+            <a href="./index.html">
+                <h1>Hello 👋</a></h1>
+        </div>
+          <div class="right">
+            <span style="cursor: pointer;" onclick="openNav()">
+              Menu
+            </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Menu -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="cursor:pointer">Close</a>
+      <div class="overlay-content">
+        <div class="menu-list">
+          <div class="menu-item maso-fitness-link"><a href="./work/design/maso-fitness.html">Maso Fitness</a></div>
+          <div class="menu-item scenic-link"><a href="./work/design/scenic.html">Scenic</a></div>
+          <div class="menu-item gallgher-link"><a href="./work/design/gallagher.html">Gallagher</a></div>
+          <div class="menu-item made-link"><a href="./work/design/made.html">Made</a></div>
+          <div class="menu-item wimbledon-link"><a href="./work/design/wimbledon.html">Wimbledon</a></div>
+          <div class="menu-item wallace-link"><a href="./work/design/wallace.html">Wallace Collection</a></div>
+        </div>
+        <div class="menu-list-other">
+          <div class="menu-item about-link"><a href="./about.html">About</a></div>
+          <div class="menu-item contact-link"><a href="./contact.html">Contact</a></div>
+        </div>
+      </div>
     </div>
+
+
+    <!-- Home Intro Section -->
+    <section id="cover-section" class="cover brand flex-center">
+      <div class="cover-text brand-text">
+          <h1>My name’s Daniel Shires.</h1>
+          <p>I’m a digital and print designer and this is some of my work.</p>
+      </div>
+      <div class="navigation-arrow down">
+          <a href="#main-container">&darr;</a>
+      </div>
+  </section>
+  <section class="main-container">
+    <article class="grid">
+      <ul id="grid" class="grid effect-1">
+
+        <!-- First Row -->
+        <li class=""><a href="./work/design/maso-fitness.html"><img
+              src="./resources/images/homepage/homepage-maso-01.jpg" alt="Maso Fitness"></a>
+        </li>
+        <li class=""><a href="./work/design/scenic.html"><img src="./resources/images/homepage/homepage-scenic-01.jpg"
+              alt="Scenic"></a>
+        </li>
+        <li class=""><a href="./work/design/gallagher.html"><img
+              src="./resources/images/homepage/homepage-gallahger-01.jpg" alt="Gallagher"></a>
+        </li>
+        <li class=""><a href="./work/design/made.html"><img src="./resources/images/homepage/homepage-made-01.jpg"
+              alt="Made"></a>
+        </li>
+        <li class=""><a href="./work/design/wimbledon.html"><img
+              src="./resources/images/homepage/homepage-wimbledon-01.jpg" alt="Wimbledon"></a>
+        </li>
+        <li class=""><a href="./work/design/wallace.html"><img
+              src="./resources/images/homepage/homepage-wallace-01.jpg" alt="Wallace"></a>
+        </li>
+
+        <!-- Second Row -->
+        <li class=""><a href="./work/design/maso-fitness.html"><img
+              src="./resources/images/homepage/homepage-maso-02.jpg" alt="Maso Fitness"></a>
+        </li>
+        <li class=""><a href="./work/design/scenic.html"><img src="./resources/images/homepage/homepage-scenic-02.jpg"
+              alt="Scenic"></a>
+        </li>
+        <li class=""><a href="./work/design/gallagher.html"><img
+              src="./resources/images/homepage/homepage-gallahger-02.jpg" alt="Gallagher"></a>
+        </li>
+        <li class=""><a href="./work/design/made.html"><img src="./resources/images/homepage/homepage-made-02.jpg"
+              alt="Made"></a>
+        </li>
+        <li class=""><a href="./work/design/wallace.html"><img
+              src="./resources/images/homepage/homepage-wallace-02.jpg" alt="Wallace"></a>
+        </li>
+
+        <!-- Third Row -->
+        <li class=""><a href="./work/design/maso-fitness.html"><img
+              src="./resources/images/homepage/homepage-maso-03.jpg" alt="Maso Fitness"></a>
+        </li>
+        <li class=""><a href="./work/design/scenic.html"><img src="./resources/images/homepage/homepage-scenic-03.jpg"
+              alt="Scenic"></a>
+        </li>
+        <li class=""><a href="./work/design/gallagher.html"><img
+              src="./resources/images/homepage/homepage-gallahger-03.jpg" alt="Gallagher"></a>
+        </li>
+        <li class=""><a href="./work/design/made.html"><img src="./resources/images/homepage/homepage-made-03.jpg"
+              alt="Made"></a>
+        </li>
+        <li class=""><a href="./work/design/wallace.html"><img
+              src="./resources/images/homepage/homepage-wallace-03.jpg" alt="Wallace"></a>
+        </li>
+
+        <!-- Fourth Row
+        <li class=""><a href="./work/design/maso-fitness.html"><img
+          src="./resources/images/homepage/homepage-maso-04.jpg" alt="Maso Fitness"></a>
+    </li>
+    <li class=""><a href="./work/design/scenic.html"><img src="./resources/images/homepage/homepage-scenic-04.jpg"
+          alt="Scenic"></a>
+    </li>
+    <li class=""><a href="./work/design/gallagher.html"><img
+          src="./resources/images/homepage/homepage-gallahger-04.jpg" alt="Gallagher"></a>
+    </li>
+    <li class=""><a href="./work/design/made.html"><img src="./resources/images/homepage/homepage-made-04.jpg"
+          alt="Made"></a>
+    </li>
+    <li class=""><a href="./work/design/wallace.html"><img
+          src="./resources/images/homepage/homepage-wallace-04.jpg" alt="Wallace"></a>
+    </li>
+-->
+      </ul>
+    </article>
+  </section>
+
+
+    <!-- custom JS -->
+    <script src="resources/js/custom.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+      window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+    </script>
+    <!-- Masonry -->
+    <script src="resources/js/masonry.js"></script>
+    <!-- Images Loaded -->
+    <script src="resources/js/imagesLoaded.js"></script>
+    <!-- AnimateOnScroll -->
+    <script src="resources/js/AnimOnScroll.js"></script>
+    <!-- Classie -->
+    <script src="resources/js/classie.js"></script>
+    <!-- Modernizer -->
+    <script src="resources/js/modernizr.custom.js"></script>
+
+    <!-- Animate on Scroll -->
+    <script>
+      new AnimOnScroll(document.getElementById('grid'), {
+        minDuration: 0.4,
+        maxDuration: 0.7,
+        viewportFactor: 0.4
+      });
+    </script>
+
+    <!-- Menu -->
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.display = "block";
+      }
+
+      function closeNav() {
+        document.getElementById("myNav").style.display = "none";
+      }
+    </script>
+
+    <script>
+      var ul = document.querySelector('ul');
+      for (var i = ul.children.length; i >= 0; i--) {
+        ul.appendChild(ul.children[Math.random() * i | 0]);
+      }
+    </script>
+  </div>
 </body>
 
 </html>

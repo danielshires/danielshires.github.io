@@ -3,125 +3,191 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167762517-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-167762517-1');
+  </script>
+  <!-- Title -->
   <meta charset="utf-8">
-  <title>The HTML5 Herald</title>
+  <title>Daniel Shires – Digital Graphic Designer</title>
   <!-- Meta -->
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <meta name="description" content="Daniel Shires – Digital Graphic Designer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.danielshires.com">
+  <meta property="og:title" content="Daniel Shires – Digital Graphic Designer">
+  <meta property="og:description" content="Portfolio of Dabiel Shires, Sydney-based Digital Graphic Designer.">
+  <meta property="og:image" content="/resources/favicon/open-graph.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="628">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@danielshires">
+  <meta name="twitter:title" content="Daniel Shires – Digital Graphic Designer">
+  <meta name="twitter:description" content="Portfolio of Dabiel Shires, Sydney-based Digital Graphic Designer.">
+  <meta name="twitter:image" content="/assets/favicon/open-graph.jpg">
+  <meta name="twitter:creator" content="@rdbok">
   <!-- Links -->
-  <link rel="stylesheet" type="text/css" href="../../resources/CSS/reset.css">
-  <link rel="stylesheet" type="text/css" href="../../resources/CSS/styles.css">
-  <link rel="stylesheet" type="text/scss" href="../../resources/CSS/styles.scss">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicon/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/css/styles.css">
+  <link rel="stylesheet" type="text/scss" href="../../resources/css/styles.scss">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-  <!-- Scrips-->
+  <!-- Scripts -->
   <script src="https://kit.fontawesome.com/5169a90acf.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
   </script>
-  <script>
-    $(function () {
-      $("#header").load("../../header.html");
-      $("#footer").load("../../footer.html");
-    });
-  </script>
 </head>
 
 <body id="body" class="body">
+
+  <!-- Page -->
   <div id="page" class="page">
-    <header id="header" class="header">
+
+    <!-- Header -->
+    <header id="header">
+      <nav id="nav" class="header header-text">
+        <div class="top">
+          <div class="left">
+            <a href="../../index.html">
+                <h1>Home</a></h1>
+        </div>
+          <div class="right">
+            <span style="cursor: pointer;" onclick="openNav()">
+              Menu
+            </span>
+          </div>
+        </div>
+      </nav>
     </header>
-
-    <section id="home-section" class="home-section">
-      <div class="intro">
-        <h1 class="intro-text">Hello 👋 My name is <span class="" data-wiv-speed=".15" data-wiv-height="5"
-            data-wiv-tightness="16" data-wiv-thickness="2" data-wiv-color="#ffffff" data-wiv-direction="clockwise"
-            data-wiv-fill="#ffffff">Daniel
-            Shires</span> and I’m a <span>Digital Graphic Designer</span>.</p>
+    <!-- Menu -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="cursor:pointer">Close</a>
+      <div class="overlay-content">
+        <div class="menu-list">
+          <div class="menu-item maso-fitness-link"><a href="../..//work/design/maso-fitness.html">Maso Fitness</a></div>
+          <div class="menu-item scenic-link"><a href="../../work/design/scenic.html">Scenic</a></div>
+          <div class="menu-item gallgher-link"><a href="../../work/design/gallagher.html">Gallagher</a></div>
+          <div class="menu-item made-link"><a href="../../work/design/made.html">Made</a></div>
+          <div class="menu-item wimbledon-link"><a href="../../work/design/wimbledon.html">Wimbledon</a></div>
+          <div class="menu-item wallace-link"><a href="../../work/design/wallace.html">Wallace Collection</a></div>
+        </div>
+        <div class="menu-list-other">
+          <div class="menu-item about-link"><a href="../../about.html">About</a></div>
+          <div class="menu-item contact-link"><a href="../../contact.html">Contact</a></div>
+        </div>
       </div>
-
-      <!-- Masonry Grid
-    <ul class="grid effect-1" id="grid">
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-3.jpg"></a>
-      </li>
-      <li class="large"><a href="#"><img src="resources/images/Scenic/Wonder-Homepage-01.jpg"></a>
-      </li>
-      <li class=""><a href="./Work/Personal/luna-land.html" alt="Luna Land Cover"><img
-            src="resources/images/Luna-Land/01_Luna_Land.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/Images/Maso-Fitness/Maso-Project-Tiles-5.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-6.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-7.jpg"></a>
-      </li>
-      <li class=""><a href="#" alt="Luna Land Cover"><img src="resources/images/Luna-Land/01_Luna_Land.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-9.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-3.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-3.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-4.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-5.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-6.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-7.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-8.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-9.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-3.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-4.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-5.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-6.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-7.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-8.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-9.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-3.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-4.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-5.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-6.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-7.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-8.jpg"></a>
-      </li>
-      <li class=""><a href="#"><img src="resources/images/Maso-Fitness/Maso-Project-Tiles-9.jpg"></a>
-      </li>
+    </div>
 
 
-    </ul>
-  -->
+    <!-- Project Cover Section -->
+    <section id="cover-section" class="cover scenic flex-center">
+      <div class="cover-text scenic-text">
+        <h1>Scenic</h1>
+        <p>Work produced for a 6‑star luxury a travel and cruise operator.
+          <div class="cover-roles scenic-roles">
+            <h5>Role <span>Digital & Print
+              </span></h5>
+            <h5>Date <span>2019-2020</span></h5>
+          </div>
+      </div>
+      <div class="navigation-arrow navigation-scenic down">
+        <a href="#main-container">&darr;</a>
+      </div>
+    </section>
+    <section id="main-container" class="main-container">
+      <article class="grid">
+        <ul id="grid" class="grid effect-1">
+          <li class="large"><img src="../../resources/images/scenic/scenic-Project-Tiles-2.jpg" alt="">
+          </li>
+        </ul>
+        <ul id="grid" class="grid effect-1">
+          <li class="medium"><img src="../../resources/images/scenic/scenic-Project-Tiles-3.jpg" alt="">
+          </li>
+          <li class="medium"><img src="../../resources/images/scenic/scenic-Project-Tiles-4.jpg" alt="">
+          </li>
+        </ul>
+        <ul id="grid" class="grid effect-1">
+          <li class="large"><img src="../../resources/images/scenic/scenic-Project-Tiles-6.jpg" alt="">
+          </li>
+        </ul>
+
+        <ul id="grid" class="grid effect-1">
+          <li class="medium"><img src="../../resources/images/scenic/scenic-Project-Tiles-7.jpg" alt="">
+          </li>
+          <li class="medium"><img src="../../resources/images/scenic/scenic-Project-Tiles-9.jpg" alt="">
+          </li>
+        </ul>
+
+        <ul id="grid" class="grid effect-1">
+          <li class="medium"><img src="../../resources/images/scenic/scenic-Project-Tiles-8.jpg" alt="">
+          </li>
+          <li class="medium"><img src="../../resources/images/scenic/scenic-Project-Tiles-10.jpg" alt="">
+          </li>
+          <li class="large"><img src="../../resources/images/scenic/scenic-Project-Tiles-11.jpg" alt="">
+          </li>
+          <li class="large"><img src="../../resources/images/scenic/scenic-Project-Tiles-12.jpg" alt="">
+          </li>
+          <li class="large"><img src="../../resources/images/scenic/scenic-Project-Tiles-13.jpg" alt="">
+          </li>
+          <li class="large"><img src="../../resources/images/scenic/scenic-Project-Tiles-14.jpg" alt="">
+          </li>
+          <li class="large"><img src="../../resources/images/scenic/scenic-Project-Tiles-15.jpg" alt="">
+          </li>
+        </ul>
+
+        <ul id="grid" class="grid effect-1">
+
+        </ul>
+        <ul id="grid" class="grid effect-1">
+
+        </ul>
+      </article>
     </section>
 
+    <!-- Footer -->
 
+    <footer id="cover-footer" class="cover flex-center">
+      <div class="cover-text footer-text">
+        <h1><a href="./gallagher.html">Next Project</a></h1>
+      </div>
+      <div class="navigation-arrow navigation-scenic up ">
+        <a href="#cover-section">&uarr;</a>
+      </div>
+    </footer>
+
+
+
+
+    <!-- custom JS -->
+    <script src="../../resources/js/custom.js"></script>
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+      window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+    </script>
     <!-- Masonry -->
-    <script src="../../resources/JS/masonry.js"></script>
+    <script src="../../resources/js/masonry.js"></script>
     <!-- Images Loaded -->
-    <script src="../../resources/JS/imagesLoaded.js"></script>
+    <script src="../../resources/js/imagesLoaded.js"></script>
     <!-- AnimateOnScroll -->
-    <script src="../../resources/JS/AnimOnScroll.js"></script>
+    <script src="../../resources/js/AnimOnScroll.js"></script>
     <!-- Classie -->
-    <script src="../../resources/JS/classie.js"></script>
+    <script src="../../resources/js/classie.js"></script>
     <!-- Modernizer -->
-    <script src="../../resources/JS/modernizr.custom.js"></script>
+    <script src="../../resources/js/modernizr.custom.js"></script>
     <!-- Animate on Scroll -->
     <script>
       new AnimOnScroll(document.getElementById('grid'), {
@@ -131,14 +197,15 @@
       });
     </script>
 
-
-    <!-- Wiggly Div -->
-    <script src="../../resources/JS/wiv.js"></script>
-
+    <!-- Menu -->
     <script>
-      //initial wivs and call initial frame render
-      let w = wiv.wiv();
-      w.initWivs();
+      function openNav() {
+        document.getElementById("myNav").style.display = "block";
+      }
+
+      function closeNav() {
+        document.getElementById("myNav").style.display = "none";
+      }
     </script>
 
   </div>
