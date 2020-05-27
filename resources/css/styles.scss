@@ -47,6 +47,10 @@ $wimbledon-light: #98c4ae;
   padding: 2.5rem;
 }
 
+@mixin site-padding-tablet {
+  padding: 2rem;
+}
+
 @mixin site-padding-mobile {
   padding: 1rem;
 }
@@ -150,6 +154,7 @@ html {
   font-size: 16px;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  height: -webkit-fill-available;
 }
 
 /* border box on child elements
@@ -167,6 +172,7 @@ body {
   margin: auto;
   background-color: $bg-homepage;
   font-family: 'IBM Plex Sans', Helvetica, sans-serif;
+  min-height: -webkit-fill-available;
 }
 
 
@@ -362,7 +368,7 @@ a {
 // Cover Section ------------------------------
 
 .cover {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   @include site-padding;
 }

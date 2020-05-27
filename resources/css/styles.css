@@ -2,6 +2,7 @@ html {
   font-size: 16px;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  height: -webkit-fill-available;
 }
 
 /* border box on child elements
@@ -18,6 +19,7 @@ body {
   margin: auto;
   background-color: #eee;
   font-family: 'IBM Plex Sans', Helvetica, sans-serif;
+  min-height: -webkit-fill-available;
 }
 
 .fourzerofour {
@@ -272,7 +274,7 @@ a {
 }
 
 .cover {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   padding: 2.5rem;
 }
@@ -730,9 +732,96 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  header {
+    padding: 2rem;
+  }
+  .header-text h1 {
+    color: #1D252D;
+    font-size: 2em;
+    line-height: 2.5rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+    transition: 200ms ease-out;
+  }
+  .right span {
+    color: #1D252D;
+    font-size: 2em;
+    line-height: 2.5rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+    transition: 200ms ease-out;
+  }
+  .overlay-content {
+    padding: 2rem;
+    font-size: 2em;
+    line-height: 2.5rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+  }
+  .overlay .closebtn {
+    padding: 2rem;
+    font-size: 2em;
+    line-height: 2.5rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+  }
+  .menu-list-other {
+    font-size: 2em;
+    line-height: 2.5rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+  }
+  .cover {
+    width: 85%;
+    padding: 2rem;
+  }
   .cover-text {
-    width: 80%;
+    width: 100%;
     height: auto;
+  }
+  .cover-text h1 {
+    font-size: 2em;
+    line-height: 2.5rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+  }
+  .cover-text p {
+    font-size: 2em;
+    line-height: 2.5rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+  }
+  .cover-roles {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-top: 1rem;
+  }
+  .cover-roles h5 {
+    padding-right: 1.5rem;
+  }
+  .cover-roles span {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+  .navigation-arrow {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: 300;
+    -webkit-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+    text-align: right;
+    margin-right: 0.1rem;
+  }
+  .navigation-arrow.up {
+    margin-bottom: -0.25rem;
   }
 }
 
