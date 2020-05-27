@@ -910,12 +910,12 @@ header {
 // Cover Section ------------------------------
 
 .cover {
-  width: 85%;
+  width: 100%;
   @include site-padding-tablet;
 }
 
 .cover-text {
-  width: 100%;
+  width: 85%;
   height: auto;
 
   h1 {
