@@ -14,11 +14,10 @@ body>* {
 */
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   margin: auto;
   background-color: #eee;
   font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-  min-height: -webkit-fill-available;
 }
 
 .fourzerofour {
