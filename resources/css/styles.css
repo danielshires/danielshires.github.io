@@ -2,7 +2,6 @@ html {
   font-size: 16px;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  height: -webkit-fill-available;
 }
 
 /* border box on child elements
@@ -19,7 +18,6 @@ body {
   margin: auto;
   background-color: #eee;
   font-family: 'IBM Plex Sans', Helvetica, sans-serif;
-  min-height: -webkit-fill-available;
 }
 
 .fourzerofour {
