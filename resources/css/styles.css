@@ -226,17 +226,19 @@ header {
   -ms-flex-line-pack: justify;
       align-content: space-between;
   color: #eee;
+  color: #eee;
   font-size: 2.75rem;
   line-height: 3.25rem;
   font-weight: 300;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out;
-  color: #eee;
 }
 
 section {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
 }
 
@@ -271,7 +273,9 @@ a {
 }
 
 .cover {
-  height: 100%;
+  height: 100vh;
+  /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   padding: 2.5rem;
 }
@@ -651,7 +655,7 @@ a {
   margin-top: 0rem;
   z-index: 1;
   padding: 1rem;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .grid:after {
@@ -710,14 +714,14 @@ a {
   }
 }
 
-@media only screen and (max-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   header {
     padding: 2rem;
   }
   .header-text h1 {
     color: #1D252D;
-    font-size: 2em;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     font-weight: 300;
     -webkit-transition: 200ms ease-out;
     transition: 200ms ease-out;
@@ -725,8 +729,8 @@ a {
   }
   .right span {
     color: #1D252D;
-    font-size: 2em;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     font-weight: 300;
     -webkit-transition: 200ms ease-out;
     transition: 200ms ease-out;
@@ -734,23 +738,23 @@ a {
   }
   .overlay-content {
     padding: 2rem;
-    font-size: 2em;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     font-weight: 300;
     -webkit-transition: 200ms ease-out;
     transition: 200ms ease-out;
   }
   .overlay .closebtn {
     padding: 2rem;
-    font-size: 2em;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     font-weight: 300;
     -webkit-transition: 200ms ease-out;
     transition: 200ms ease-out;
   }
   .menu-list-other {
-    font-size: 2em;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     font-weight: 300;
     -webkit-transition: 200ms ease-out;
     transition: 200ms ease-out;
@@ -764,15 +768,15 @@ a {
     height: auto;
   }
   .cover-text h1 {
-    font-size: 2em;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     font-weight: 300;
     -webkit-transition: 200ms ease-out;
     transition: 200ms ease-out;
   }
   .cover-text p {
-    font-size: 2em;
-    line-height: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
     font-weight: 300;
     -webkit-transition: 200ms ease-out;
     transition: 200ms ease-out;
