@@ -24,14 +24,16 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="http://www.danielshires.com">
   <meta property="og:title" content="Wimbledon – Daniel Shires – Digital Graphic Designer">
-  <meta property="og:description" content="A series of wall panels produced to go underneath Centre Court at the All-England Tennis Club, Wimbledon.">
+  <meta property="og:description"
+    content="A series of wall panels produced to go underneath Centre Court at the All-England Tennis Club, Wimbledon.">
   <meta property="og:image" content="../../resources/favicon/open-graph.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@danielshires">
   <meta name="twitter:title" content="Wimbledon – Daniel Shires – Digital Graphic Designer">
-  <meta name="twitter:description" content="A series of wall panels produced to go underneath Centre Court at the All-England Tennis Club, Wimbledon.">
+  <meta name="twitter:description"
+    content="A series of wall panels produced to go underneath Centre Court at the All-England Tennis Club, Wimbledon.">
   <meta name="twitter:image" content="../../assets/favicon/open-graph.jpg">
   <meta name="twitter:creator" content="@rdbok">
   <!-- Links -->
@@ -58,10 +60,11 @@
     <header id="header">
       <nav id="nav" class="header header-text">
         <div class="top">
-            <div class="left">
-                <a href="../../index.html">
-                    <h1>Home</a></h1>
-            </div>
+          <div class="left">
+            <a href="../../index.html">
+              <h1>Home
+            </a></h1>
+          </div>
           <div class="right">
             <span style="cursor: pointer;" onclick="openNav()">
               Menu
@@ -165,49 +168,63 @@
         <a href="#cover-section">&uarr;</a>
       </div>
     </footer>
-
-
-
-
-    <!-- custom JS -->
-    <script src="../../resources/js/custom.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>
-      window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
-    </script>
-    <!-- Masonry -->
-    <script src="../../resources/js/masonry.js"></script>
-    <!-- Images Loaded -->
-    <script src="../../resources/js/imagesLoaded.js"></script>
-    <!-- AnimateOnScroll -->
-    <script src="../../resources/js/AnimOnScroll.js"></script>
-    <!-- Classie -->
-    <script src="../../resources/js/classie.js"></script>
-    <!-- Modernizer -->
-    <script src="../../resources/js/modernizr.custom.js"></script>
-    <!-- Animate on Scroll -->
-    <script>
-      new AnimOnScroll(document.getElementById('grid'), {
-        minDuration: 0.4,
-        maxDuration: 0.7,
-        viewportFactor: 0.4
-      });
-    </script>
-
-    <!-- Menu -->
-    <script>
-      function openNav() {
-        document.getElementById("myNav").style.display = "block";
-      }
-
-      function closeNav() {
-        document.getElementById("myNav").style.display = "none";
-      }
-    </script>
-
   </div>
+
+
+
+  <!-- custom JS -->
+  <script src="../../resources/js/custom.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+  </script>
+  <!-- Masonry -->
+  <script src="../../resources/js/masonry.js"></script>
+  <!-- Images Loaded -->
+  <script src="../../resources/js/imagesLoaded.js"></script>
+  <!-- AnimateOnScroll -->
+  <script src="../../resources/js/AnimOnScroll.js"></script>
+  <!-- Classie -->
+  <script src="../../resources/js/classie.js"></script>
+  <!-- Modernizer -->
+  <script src="../../resources/js/modernizr.custom.js"></script>
+  <!-- Animate on Scroll -->
+  <script>
+    new AnimOnScroll(document.getElementById('grid'), {
+      minDuration: 0.4,
+      maxDuration: 0.7,
+      viewportFactor: 0.4
+    });
+  </script>
+
+  <!-- Menu -->
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.display = "block";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.display = "none";
+    }
+  </script>
+  <!-- VH  -->
+  <script>
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  </script>
+
+
 </body>
 
 </html>
