@@ -298,13 +298,13 @@ header {
 
 .overlay-content {
   text-align: left;
-  @include site-padding;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
   height: 100%;
   @include menu-text();
+  @include site-padding;
 
   a {
     color: $text-white;
@@ -340,7 +340,7 @@ header {
 
 section {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -365,10 +365,9 @@ a {
 // Cover Section ------------------------------
 
 .cover {
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   @include site-padding;
-  min-height: -webkit-fill-available;
 }
 
 .cover-text {
@@ -847,28 +846,7 @@ a {
   }
 }
 
-@media only screen and (max-width: $breakpoint-desktop) {
-
-  .grid-sizer,
-  .grid li {
-    width: 50%;
-    float: left;
-    padding: 1rem 1rem 1rem 1rem;
-    opacity: 0;
-    display: block;
-  }
-
-  .grid li.large {
-    width: 100%;
-    clear: both;
-  }
-
-  .grid li.medium {
-    width: 50%;
-  }
-}
-
-@media only screen and (max-width: $breakpoint-tablet) {
+@media only screen and (max-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
 
 // Header ------------------------------
 
