@@ -19,6 +19,106 @@ body {
   font-family: 'IBM Plex Sans', Helvetica, sans-serif;
 }
 
+/* Grainy texture animation by Geoff Graham https://css-tricks.com/snippets/css/animated-grainy-texture/ */
+body:after {
+  -webkit-animation: grain 8s steps(10) infinite;
+          animation: grain 8s steps(10) infinite;
+  background-image: url("../images/noise.png");
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.4;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+}
+
+@-webkit-keyframes grain {
+  0%, 100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  10% {
+    -webkit-transform: translate(-5%, -10%);
+            transform: translate(-5%, -10%);
+  }
+  20% {
+    -webkit-transform: translate(-15%, 5%);
+            transform: translate(-15%, 5%);
+  }
+  30% {
+    -webkit-transform: translate(7%, -25%);
+            transform: translate(7%, -25%);
+  }
+  40% {
+    -webkit-transform: translate(-5%, 25%);
+            transform: translate(-5%, 25%);
+  }
+  50% {
+    -webkit-transform: translate(-15%, 10%);
+            transform: translate(-15%, 10%);
+  }
+  60% {
+    -webkit-transform: translate(15%, 0%);
+            transform: translate(15%, 0%);
+  }
+  70% {
+    -webkit-transform: translate(0%, 15%);
+            transform: translate(0%, 15%);
+  }
+  80% {
+    -webkit-transform: translate(3%, 35%);
+            transform: translate(3%, 35%);
+  }
+  90% {
+    -webkit-transform: translate(-10%, 10%);
+            transform: translate(-10%, 10%);
+  }
+}
+
+@keyframes grain {
+  0%, 100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  10% {
+    -webkit-transform: translate(-5%, -10%);
+            transform: translate(-5%, -10%);
+  }
+  20% {
+    -webkit-transform: translate(-15%, 5%);
+            transform: translate(-15%, 5%);
+  }
+  30% {
+    -webkit-transform: translate(7%, -25%);
+            transform: translate(7%, -25%);
+  }
+  40% {
+    -webkit-transform: translate(-5%, 25%);
+            transform: translate(-5%, 25%);
+  }
+  50% {
+    -webkit-transform: translate(-15%, 10%);
+            transform: translate(-15%, 10%);
+  }
+  60% {
+    -webkit-transform: translate(15%, 0%);
+            transform: translate(15%, 0%);
+  }
+  70% {
+    -webkit-transform: translate(0%, 15%);
+            transform: translate(0%, 15%);
+  }
+  80% {
+    -webkit-transform: translate(3%, 35%);
+            transform: translate(3%, 35%);
+  }
+  90% {
+    -webkit-transform: translate(-10%, 10%);
+            transform: translate(-10%, 10%);
+  }
+}
+
 .fourzerofour {
   background: linear-gradient(215deg, #a6c7eb, #f4a7d0);
   background-size: 400% 400%;
@@ -178,6 +278,7 @@ header {
           justify-content: space-between;
   -ms-flex-line-pack: justify;
       align-content: space-between;
+  z-index: 3;
   height: 100%;
   color: #eee;
   font-size: 2.75rem;
@@ -186,19 +287,6 @@ header {
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out;
   padding: 2.5rem;
-}
-
-.overlay-content a {
-  color: #eee;
-  -webkit-transition: 200ms ease-out;
-  transition: 200ms ease-out;
-}
-
-.overlay-content a:hover,
-.overlay-content a:focus {
-  color: #858D94;
-  -webkit-transition: 200ms ease-out;
-  transition: 200ms ease-out;
 }
 
 .overlay .closebtn {
