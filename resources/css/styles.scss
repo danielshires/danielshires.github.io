@@ -76,7 +76,7 @@ $wimbledon-light: #98c4ae;
 
 @mixin text-styles {
   font-size: 2.75rem;
-  line-height: 3.25rem;
+  line-height: 3.5rem;
   font-weight: 300;
   @include link-hover-transition()
 }
@@ -174,18 +174,19 @@ body {
   font-family: 'IBM Plex Sans', Helvetica, sans-serif;
 }
 
-/* Grainy texture animation by Geoff Graham https://css-tricks.com/snippets/css/animated-grainy-texture/ */
+/* Grainy texture animation by Geoff Graham https://css-tricks.com/snippets/css/animated-grainy-texture/ 
 
-body:after {
+body:before {
   animation: grain 8s steps(10) infinite;
   background-image: url("../images/noise.png");
   content: "";
   height: 300%;
   left: -50%;
-  opacity: 0.4;
+  opacity: 0.4; 
   position: fixed;
   top: -100%;
   width: 300%;
+  z-index: -1;
 }
 
 @keyframes grain {
@@ -200,6 +201,8 @@ body:after {
   80% { transform:translate(3%, 35%) }
   90% { transform:translate(-10%, 10%) }
 }
+
+*/
 
 .fourzerofour {
     background: linear-gradient(215deg, #a6c7eb, #f4a7d0);
@@ -224,11 +227,6 @@ body:after {
     0%{background-position:83% 0%}
     50%{background-position:18% 100%}
     100%{background-position:83% 0%}
-}
-
-#page {
-  width: 100%;
-  margin: auto;
 }
 
 // Header ------------------------------
@@ -392,9 +390,8 @@ a {
 }
 
 .cover-text {
-  width: 50%;
+  width: 80%;
   height: auto;
-
 
   h1 {
     @include cover-text();
@@ -413,14 +410,32 @@ a {
     padding-right: 2rem;
     color: $muted-grey;
     font-weight: 300;
+
+    a {
+      @include link-hover-transition();
+    }
+
+    a:hover,
+    a:focus {
+      color: $digital-navy;
+      @include link-hover-transition();
+    }
   }
 
   span {
     font-size: 1rem;
     color: $digital-navy;
     padding-left: 0.25rem;
-  }
+  }  
 }
+
+.no-padding-top {
+  padding-top: 0
+  }
+
+ .content {
+    height: auto;
+  }
 
 // Project Navigation ------------------------------
 
@@ -932,12 +947,13 @@ header {
 
   h5 {
     padding-right: 1.5rem;
-  }
+}
 
   span {
     font-size: 1rem;
     padding-left: 0.5rem;
   }
+
 }
 
 // Project Navigation ------------------------------
