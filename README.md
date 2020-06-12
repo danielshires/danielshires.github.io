@@ -8,5 +8,5 @@
 
 ![demo](https://github.com/danielshires/danielshires.github.io/blob/master/daniel-shires-portolio.png)
 
-Happy to fork with a link back to my site please!
+Happy to fork with accreditation.
 
